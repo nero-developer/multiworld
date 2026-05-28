@@ -1,0 +1,32 @@
+name: multiworld
+version: '${version}'
+main: com.rakku212.multiworld.Multiworld
+api-version: '1.21'
+
+commands:
+  multiworld:
+    description: Multiworld の作成・一覧・削除・テレポート
+    usage: /<command> <create|list|remove|tp> [...]
+    aliases: [mw]
+
+permissions:
+  multiworld.*:
+    description: Multiworld のすべての権限
+    default: op
+    children:
+      multiworld.create: true
+      multiworld.list: true
+      multiworld.remove: true
+      multiworld.tp: true
+  multiworld.create:
+    description: ワールド作成
+    default: op
+  multiworld.list:
+    description: 管理ワールド一覧
+    default: op
+  multiworld.remove:
+    description: 管理ワールドのアンロードと登録削除
+    default: op
+  multiworld.tp:
+    description: 任意のロード済みワールドへテレポート
+    default: op
